@@ -18,7 +18,8 @@ export default function Home() {
     // verschiedene dummy Nutzer
     const users = [
       { id: "1", username: "admin", password: "admin123" },
-      { id: "2", username: "user", password: "user123" }
+      { id: "2", username: "user", password: "user123" },
+      { id: "3", username: "fuchsa", password: "fuchsa123" }
     ];
     
     // Check if username === pw
