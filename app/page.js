@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react';
+import Image from 'next/image';
+import secretimage from "../public/geheimes_foto.png"
 
 export default function Home() {
   const [username, setUsername] = useState('');
@@ -53,7 +55,7 @@ export default function Home() {
   // Login-Formular
   if (authStage === 'login') {
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+      <div className="max-w-md mx-auto mt-10 p-6 text-black bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
         
         <form onSubmit={handleLogin}>
@@ -91,7 +93,7 @@ export default function Home() {
   // Code-Verifizierung
   if (authStage === 'verification') {
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+      <div className="max-w-md mx-auto mt-10 p-6 bg-white text-black rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-center mb-6">Code-Verifizierung</h1>
         
         <div className="mb-6 p-4 border border-dashed border-gray-300 bg-gray-50 rounded-md text-center">
@@ -128,7 +130,12 @@ export default function Home() {
       <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
         <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
           <p className="font-bold">Erfolgreich angemeldet!</p>
-          <p>Du hast dich erfolgreich mit Zwei-Faktor-Authentifizierung angemeldet.</p>
+          <Image 
+          src={secretimage}
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
         </div>
       </div>
     );
