@@ -21,7 +21,7 @@ export default function Home() {
       { id: '2', username: 'user', password: 'user123' }
     ];
     
-    // checken ob der username zum passwort passt 
+    // Check if username === pw
     const user = users.find(u => u.username === username && u.password === password);
     
     if (user) {
@@ -129,12 +129,13 @@ export default function Home() {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
         <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
-          <p className="font-bold">Erfolgreich angemeldet!</p>
+          <p className="font-bold">Geheimes Foto von User</p>
           <Image 
           src={secretimage}
             width={500}
             height={500}
-            alt="Picture of the author"
+            alt="geheime Fotos"
+            className="p-10"
           />
         </div>
       </div>
