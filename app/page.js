@@ -1,15 +1,15 @@
 "use client"
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 import secretimage from "../public/geheimes_foto.png"
 
 export default function Home() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [code, setCode] = useState('');
-  const [authStage, setAuthStage] = useState('login');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [code, setCode] = useState("");
+  const [authStage, setAuthStage] = useState("login");
   const [userId, setUserId] = useState(null);
-  const [generatedCode, setGeneratedCode] = useState('');
+  const [generatedCode, setGeneratedCode] = useState("");
 
   // Login-Funktion
   const handleLogin = (e) => {
@@ -17,8 +17,8 @@ export default function Home() {
     
     // verschiedene dummy Nutzer
     const users = [
-      { id: '1', username: 'admin', password: 'admin123' },
-      { id: '2', username: 'user', password: 'user123' }
+      { id: "1", username: "admin", password: "admin123" },
+      { id: "2", username: "user", password: "user123" }
     ];
     
     // Check if username === pw
@@ -29,9 +29,9 @@ export default function Home() {
       // TOTP-Code generieren
       const tempCode = generateCode(user.id);
       setGeneratedCode(tempCode);
-      setAuthStage('verification');
+      setAuthStage("verification");
     } else {
-      alert('Falsche Anmeldedaten!');
+      alert("Falsche Anmeldedaten!");
     }
   };
 
@@ -46,14 +46,14 @@ export default function Home() {
     e.preventDefault();
     
     if (code === generatedCode) {
-      setAuthStage('success');
+      setAuthStage("success");
     } else {
-      alert('Falscher Code!');
+      alert("Falscher Code!");
     }
   };
 
   // Login-Formular
-  if (authStage === 'login') {
+  if (authStage === "login") {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 text-black bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
@@ -91,7 +91,7 @@ export default function Home() {
   }
 
   // Code-Verifizierung
-  if (authStage === 'verification') {
+  if (authStage === "verification") {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 bg-white text-black rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-center mb-6">Code-Verifizierung</h1>
@@ -125,7 +125,7 @@ export default function Home() {
   }
 
   // Erfolgsmeldung
-  if (authStage === 'success') {
+  if (authStage === "success") {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
         <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">

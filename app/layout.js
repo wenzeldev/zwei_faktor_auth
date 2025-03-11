@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "2-Faktor-Auth",
+  title: "Wenzel Natebus Informatik",
   description: "erstellt von Wenzel Natebus für den Informatikunterricht",
 };
 
